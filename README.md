@@ -39,22 +39,29 @@ Interpret the output to understand:
 ## PROGRAM:
 Sleuth Kit Disk Analysis Commands
 ### Partition Analysis
+
 ```bash
 mmls disk.dd
 ```
 ### File System Metadata
 ```bash
-fsstat -o 2048 disk.dd
+fsstat disk.dd
 ```
+
+
 ### File Listing
 ```bash
-fls -o 2048 disk.dd
+fls disk.dd
 ```
+
+
 ### File Recovery
 ```bash
-icat -o 2048 disk.dd 4 > recovered_file.txt
+icat disk.dd 11 > recovered_file.txt
 ```
-- Recovers the file associated with inode 4.
+- Recovers the file associated with inode 11.
+ 
+
 ## SAMPLE WORKFLOW (Windows)
 ```bash
 # Step 1: View partitions
@@ -70,7 +77,30 @@ fls.exe -r -o 2048 C:\forensics\disk.dd
 icat.exe -o 2048 C:\forensics\disk.dd 6 > C:\forensics\image.jpg
 ```
 ## OUTPUT:
-Disk Structure Analysis Results
+**Disk Structure Analysis Results**
 
+**Create Disk**
+
+<img width="539" height="183" alt="image" src="https://github.com/user-attachments/assets/92186254-780a-4cae-8a9f-e6e1dae21c3b" />
+
+
+**File System Metadata**
+
+
+<img width="932" height="768" alt="WhatsApp Image 2026-05-19 at 2 01 03 PM" src="https://github.com/user-attachments/assets/c1b09b17-1798-478c-8c77-64abcfa4c069" />
+
+
+**File Listing**
+
+
+<img width="614" height="79" alt="image" src="https://github.com/user-attachments/assets/288b2b23-2a49-4ec9-bb9d-7fbddedd84e4" />
+
+
+
+**File Recovery**
+
+
+ <img width="478" height="348" alt="image" src="https://github.com/user-attachments/assets/724eaa30-5ce9-4a04-92d3-90a0f7d792cc" />
+ 
 ## RESULT:
 The analysis was performed successfully using Sleuth Kit, and the disk structure was understood in detail.
